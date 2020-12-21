@@ -228,7 +228,7 @@ class Solution
             for (int j = 1; j<=target; j++)
             {
                 if(j>i*f) break;
-                for (int k - 1; k<=f && k<=j; k++)
+                for (int k = 1; k<=f && k<=j; k++)
                 {
                     dp[i][j] = (dp[i][j] + dp[i-1][j-k])%md;
                 }
@@ -250,7 +250,7 @@ class Solution
             for (int j = 1; j<= target; j++)
             {
                 if (j>i*f) break;
-                for(int k -1; k<=f && k<=j; k++)
+                for(int k =1; k<=f && k<=j; k++)
                 {
                     dp[i][j] = (dp[i][j] + dp[i-1][j-k])%md;
                 }
