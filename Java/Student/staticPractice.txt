@@ -1,0 +1,82 @@
+public class staticPractice 
+{
+    //https://www.baeldung.com/java-static#:~:text=In%20the%20Java%20programming%20language,all%20instances%20of%20the%20class.
+
+    //https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-lang-oop-modifiers
+
+    //the keyword static indicates that the particular member belongs to a type itself, rather than to an instance of that type.
+    //  a field is declared static, then exactly a single copy of that field is created and shared among all instances of that class. 
+
+    //When the value of variable is independent of objects
+    //When the value is supposed to be shared across all objects
+}
+
+
+public class Car
+{
+    private String name;
+    private String engine;
+
+    public static int numberOfCars;
+    public Car (String name, String engine)
+    {
+        this.name = name;
+        this.engine = engine;
+        numberOfCars++;
+    }
+
+    // getters and setters
+}
+
+@Test
+public void whenNumberOfCarObjectsInitialized_thenStaticCounterIncreases() {
+    new Car("Jaguar", "V8");
+    new Car("Bugatti", "W16");
+ 
+    assertEquals(2, Car.numberOfCars);
+}
+
+
+//static methods also belong to a class instead of the object, and so they can be called without creating the object of the class in which they reside. They're meant to be used without creating objects of the class.
+//To access/manipulate static variables and other static methods that don't depend upon objects
+//static methods are widely used in utility and helper classes
+
+public static void setNumberOfCars(int numberOfCars) 
+{
+    Car.numberOfCars = numberOfCars;
+}
+
+//If static variables require additional, multi-statement logic while initialization, then a static block can be used.
+public class StaticBlockDemo {
+    public static List<String> ranks = new LinkedList<>();
+
+    static {
+        ranks.add("Lieutenant");
+        ranks.add("Captain");
+        ranks.add("Major");
+    }
+    
+    static {
+        ranks.add("Colonel");
+        ranks.add("General");
+    }
+}
+
+/*
+The main difference between these two is that the inner classes have access to all member of the enclosing class (including private), whereas the static nested classes only have access to static members of the outer class.
+
+In fact, static nested classes behaved exactly like any other top-level class but enclosed in the only class which will access it, to provide better packaging convenience.
+
+*/
+public class Singleton  {    
+    private Singleton() {}
+    
+    private static class SingletonHolder {    
+        public static final Singleton instance = new Singleton();
+    }    
+
+    public static Singleton getInstance() {    
+        return SingletonHolder.instance;    
+    }    
+}
+
