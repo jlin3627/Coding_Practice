@@ -1,0 +1,78 @@
+import java.util.*; //all classes in util package
+
+convert string to int
+int i = Integer.parseInt
+
+Initialize 2d array
+int[][] a = new int[3][4];
+Array uses length
+Collections uses size()
+
+String use length()
+    String.substring(0,2) [0,2)
+    str1.equals(str2)
+    char[] tmp = s.toCharArray();
+    Arrays.sort(tmp);
+    String key = String.valueOf(tmp);
+
+ordinal() retusn the ordinal of this enumeration constant
+
+https://www.geeksforgeeks.org/initializing-a-list-in-java/
+list
+arraylist - dynamically resized array add(O(n))
+    List<List<Integer>> answers = new ArrayList<List<Integer>>();
+linkedlist - doubly linked list  add(O(1))
+    add to the end of the list
+    addFirst add to the front;
+    remove() remove the head of the list
+    removeLast
+    peekLast
+vector
+
+Map
+Map<String, List<String>> map = new HashMap<>();
+new ArrayList<>(map.values());
+map.put(key, value);
+map.containsKey(0, 0);
+map.containsValue(0,0);
+map.get(key);
+map.remove(key);
+
+
+String functions
+charAt
+compareTo
+concat - returns a new string, does not udpate the invoking string
+    s = s.concat  (add new string to the end)
+    s.concat  only returns new string
+
+Character.getNumericValue(string.charAt(index);)
+Integer.toString(a); // a is a int;
+
+StringBuilder
+char is same as short  https://stackoverflow.com/questions/4318263/java-subtract-0-from-char-to-get-an-int-why-does-this-work
+appends -> add to the end
+string to Int -> s.charAt(i) - '0'; result = result * 10 + digit;
+int to string -> s.append((char)('0' + Math.abs(x%10)));
+
+int vs Integer 
+
+Stacks:   last in first Out
+Deque<Integer> nodes = new LinkedList<>();
+push -  push element onto stack
+peek - retrieve, does not remove
+pop - remove and return the element at the top of the stack
+
+Queue: First in first out;
+enqueue data.add(x);
+dequeue data.removeFirst();
+
+to avoid integer overflow, use q = s + (e -s) / 2 
+
+https://www.baeldung.com/java-interview-questions
+
+Access modifiers:
+private - class members won't be accessible outside the class
+default - to all types
+protected - all classes with one pacakage can access protected method, protected modifier allows subclasses to access the protected members of a superclass, even if they are not within the same pacakge.
+public
